@@ -27,3 +27,366 @@
 .cart-link{display:inline-flex;align-items:center;gap:4px;line-height:1;min-width:max-content;}
 .cart-count{display:inline-block;min-width:1ch;line-height:1;font-variant-numeric:tabular-nums;}
 @media(max-width:1100px){.header__inner{padding-left:20px;padding-right:20px;}.navigation{gap:18px;}.navigation__menu{gap:14px;}.navigation__item a{font-size:14px;}}
+
+
+
+/* ==========================================
+   ЦВЕТОЧНЫЙ РАЙ — LUXURY FLORAL REDESIGN
+   Бордовый • золото • цвет слоновой кости
+   ========================================== */
+
+:root {
+    --lux-burgundy: #501625;
+    --lux-burgundy-dark: #35101b;
+    --lux-wine: #70253a;
+    --lux-gold: #c5a15b;
+    --lux-gold-light: #e1ca91;
+    --lux-cream: #fbf7f0;
+    --lux-white: #fffdf9;
+    --lux-text: #352a2b;
+    --lux-muted: #796c6b;
+    --lux-border: #e8dccb;
+    --lux-shadow: 0 12px 35px rgba(53, 16, 27, 0.10);
+}
+
+/* Основной стиль */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--lux-cream);
+    color: var(--lux-text);
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+::selection {
+    background: var(--lux-gold);
+    color: var(--lux-burgundy-dark);
+}
+
+img {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4,
+.header__title,
+.composition__title {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--lux-burgundy);
+    line-height: 1.2;
+}
+
+h2, h3 {
+    letter-spacing: 0.01em;
+}
+
+/* Шапка и навигация */
+
+.header {
+    position: relative;
+    background:
+        radial-gradient(
+            ellipse at 85% 15%,
+            rgba(197, 161, 91, 0.16),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            var(--lux-burgundy-dark),
+            var(--lux-burgundy) 58%,
+            #642137
+        );
+    color: var(--lux-white);
+    border-bottom: 3px solid var(--lux-gold);
+}
+
+.header__inner {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 22px 0 38px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid rgba(225, 202, 145, 0.35);
+}
+
+.navigation__logo {
+    color: var(--lux-gold-light) !important;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(23px, 3vw, 34px);
+    font-weight: 700;
+    text-decoration: none !important;
+    letter-spacing: 0.02em;
+}
+
+.navigation__menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation__item a {
+    color: var(--lux-white);
+    font-size: 14px;
+    text-decoration: none !important;
+    transition: color 0.25s ease;
+}
+
+.navigation__item a:hover {
+    color: var(--lux-gold-light);
+}
+
+/* Первый экран */
+
+.header__text {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 76px 12px 58px;
+    text-align: center;
+}
+
+.header__title h1 {
+    margin: 0 0 18px;
+    color: var(--lux-white);
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+}
+
+.header__title h1::after {
+    content: "";
+    display: block;
+    width: 82px;
+    height: 2px;
+    margin: 24px auto 0;
+    background: var(--lux-gold);
+}
+
+.header__decription {
+    margin: 22px 0 0;
+    color: var(--lux-gold-light);
+    font-size: clamp(16px, 2vw, 21px);
+    letter-spacing: 0.04em;
+}
+
+/* Заголовки разделов */
+
+.main {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding-top: 32px;
+    padding-bottom: 60px;
+}
+
+.composition {
+    padding-top: 22px;
+}
+
+.composition__header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.composition__title {
+    margin-bottom: 14px;
+    font-size: clamp(30px, 4vw, 46px);
+}
+
+.composition__title::after {
+    content: "";
+    display: block;
+    width: 58px;
+    height: 2px;
+    margin: 16px auto 0;
+    background: var(--lux-gold);
+}
+
+/* Карточки и изображения */
+
+.card,
+.container4,
+.fig3 {
+    border-radius: 14px;
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid var(--lux-border) !important;
+    background: var(--lux-white);
+    box-shadow: var(--lux-shadow);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 42px rgba(53, 16, 27, 0.15);
+}
+
+.card img,
+.container4 img,
+.fig3 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card img {
+    transition: transform 0.4s ease;
+}
+
+.card:hover img {
+    transform: scale(1.025);
+}
+
+figure {
+    margin-bottom: 0;
+}
+
+/* Кнопки */
+
+button,
+.btn,
+input[type="submit"],
+input[type="button"] {
+    border: 1px solid var(--lux-gold) !important;
+    border-radius: 5px !important;
+    background: var(--lux-burgundy) !important;
+    color: var(--lux-white) !important;
+    padding: 11px 22px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+button:hover,
+.btn:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: var(--lux-gold) !important;
+    color: var(--lux-burgundy-dark) !important;
+    transform: translateY(-2px);
+}
+
+a {
+    transition: color 0.2s ease;
+}
+
+.main a:not(.btn):hover {
+    color: var(--lux-wine);
+}
+
+/* Поля ввода и формы */
+
+input:not([type="submit"]):not([type="button"]),
+select,
+textarea {
+    max-width: 100%;
+    border: 1px solid var(--lux-border);
+    border-radius: 6px;
+    background: var(--lux-white);
+    color: var(--lux-text);
+    padding: 10px 12px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid rgba(197, 161, 91, 0.45);
+    outline-offset: 1px;
+}
+
+/* Социальные ссылки */
+
+.sociales {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sociales__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(225, 202, 145, 0.65);
+    border-radius: 50%;
+    transition: background 0.25s ease;
+}
+
+.sociales__link:hover {
+    background: rgba(197, 161, 91, 0.2);
+}
+
+/* Ссылки и декоративные элементы */
+
+hr {
+    border-color: var(--lux-gold);
+    opacity: 0.55;
+}
+
+.main a {
+    overflow-wrap: anywhere;
+}
+
+/* Адаптация для телефона */
+
+@media (max-width: 768px) {
+    .header__inner {
+        padding-top: 16px;
+    }
+
+    .navigation {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .navigation__menu {
+        justify-content: center;
+        gap: 10px 16px;
+    }
+
+    .header__text {
+        padding: 48px 6px 38px;
+    }
+
+    .main {
+        width: 94%;
+        padding-top: 20px;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
