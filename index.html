@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/my.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <script src="jquery.horizontal.scroll.min.js" type="text/jаvascript"></script>
+  
+    <title>Главная</title>
+
+    <style>
+        .hero-landing {
+            position: relative;
+            min-height: calc(100vh - 86px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background:
+                linear-gradient(90deg, rgba(43, 24, 28, .56), rgba(43, 24, 28, .18)),
+                url("sourse/цветыввазе.jpg") center/cover no-repeat;
+            color: #fff;
+        }
+        .hero-landing__overlay {
+            position: absolute; inset: 0;
+            background: radial-gradient(circle at center, transparent 0 28%, rgba(35, 18, 22, .22) 100%);
+        }
+        .hero-landing__content {
+            position: relative; z-index: 1;
+            width: min(900px, 90%);
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero-landing__eyebrow {
+            margin: 0 0 18px;
+            font-size: 18px; letter-spacing: .18em; text-transform: uppercase;
+        }
+        .hero-landing__title {
+            margin: 0 auto 34px;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(42px, 6vw, 82px);
+            line-height: 1.05; font-weight: 500;
+            text-shadow: 0 3px 22px rgba(0,0,0,.3);
+        }
+        .hero-landing__button {
+            display: inline-flex; align-items: center; justify-content: center;
+            min-width: 210px; padding: 14px 28px;
+            border: 1px solid rgba(255,255,255,.75); border-radius: 999px;
+            color: #fff; text-decoration: none; background: rgba(255,255,255,.13);
+            backdrop-filter: blur(5px); transition: .25s ease;
+        }
+        .hero-landing__button:hover { background: #fff; color: #542f37; transform: translateY(-2px); }
+        .hero-landing__scroll {
+            position: absolute; z-index: 1; bottom: 24px; left: 50%;
+            transform: translateX(-50%); color: #fff; text-decoration: none;
+            font-size: 28px; opacity: .85; animation: hero-bounce 1.8s infinite;
+        }
+        @keyframes hero-bounce { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,7px); } }
+        @media (max-width: 700px) {
+            .hero-landing { min-height: 72vh; }
+            .hero-landing__title { font-size: clamp(38px, 11vw, 58px); }
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="header__inner">
+            <nav class="navigation">
+                <u><a class="navigation__logo" href="index.html">Цветочный рай</a></u>
+                <ul class="navigation__menu">
+                    <li class="navigation__item"><u><a href="#">Услуги</a></u></li>
+                    <li class="navigation__item"><u><a href="composition.html">Композиции</a></u></li>
+                    <li class="navigation__item"><u><a href="#">Шары</a></u></li>
+                    <li class="navigation__item"><u><a href="about.html">Мы</a></u></li>
+                    <li class="navigation__item"><u><a href="#">Корзина</a></u></li>
+                </ul>
+            </nav>
+            <div class="header__text">
+                <div class="header__title">
+                    <h1>Цветочный рай</h1>
+                </div>
+                <p class="header__decription">Окунись в море красоты и ароматов</p>
+            </div>
+
+            <ul class="sociales">
+                <li class="sociales__item"><a class="sociales__link vk" href="https://vk.com/flowerschesnokowka"></a></li>
+                <li class="sociales__item"><a class="sociales__link tg" href="@flaueo"></a></li>
+                <li class="sociales__item"><a class="sociales__link inst" href="https://instagram.com/kkkkamilo4ka?utm_medium=copy_link"></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Нулевой посадочный блок -->
+    <section class="hero-landing" aria-label="Цветочный рай">
+        <div class="hero-landing__overlay"></div>
+        <div class="hero-landing__content">
+            <p class="hero-landing__eyebrow">Цветочный рай</p>
+            <h1 class="hero-landing__title">Окунись в море<br>красоты и ароматов</h1>
+            <a class="hero-landing__button" href="#catalog">Смотреть каталог</a>
+        </div>
+        <a class="hero-landing__scroll" href="#catalog" aria-label="Перейти к каталогу">↓</a>
+    </section>
+
+    <main class="main">
+        <section class="catalog" id="catalog">
+            <h2 class="catalog__title">Каталог</h2>
+            <div class="card-container">
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/подсолнухинаполе.jpg" alt="Подсолнухи-на-поле">
+                    <h2 class="product-card__title">Подсолнухи<br>на поле</h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/цветыдлядома.jpg" alt="Цветы-для-дома">
+                    <h2 class="product-card__title">Цветы для дома<br><br> </h2>
+                    <p class="product-card__price">4600 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/нежность.jpg" alt="Нежность">
+                    <h2 class="product-card__title">Нежность<br><br> </h2>
+                    <p class="product-card__price">3900 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/весеннийсад.jpg" alt="Весенний-сад">
+                    <h2 class="product-card__title">Весенний сад<br><br>   </h2>
+                    <p class="product-card__price">2900 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/радостьлюбви.jpg" alt="Радость-любви">
+                    <h2 class="product-card__title">Радость любви<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/цветыввазе.jpg" alt="Цветы-в-вазе">
+                    <h2 class="product-card__title">Цветы в вазе<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/нежностьвесны.jpg" alt="Нежность-весны">
+                    <h2 class="product-card__title">Нежность весны<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/радостьцветов.jpg" alt="Радость-цветов">
+                    <h2 class="product-card__title">Радость цветов<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/солнце.jpg" alt="Солнце">
+                    <h2 class="product-card__title">Солнечный день<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/нежностьвесны.jpg" alt="Нежность-весны">
+                    <h2 class="product-card__title">Нежность весны<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/радостьцветов.jpg" alt="Радость-цветов">
+                    <h2 class="product-card__title">Радость цветов<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/солнце.jpg" alt="Солнце">
+                    <h2 class="product-card__title">Солнечный день<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+                <div class="product-card">
+                    <img class="product-card__image" src="sourse/нежностьвесны.jpg" alt="Нежность-весны">
+                    <h2 class="product-card__title">Нежность весны<br><br> </h2>
+                    <p class="product-card__price">4500 ₽</p>
+                    <button class="product-card__btn">Купить</button>
+                </div>
+              </div>
+        </section>
+        <section class="services">
+            <h2 class="section__title">Услуги</h2>
+            <div class="services__inner">
+                <div class="service__item wedding"><span class="services__name">Свадьба</span></div>
+                <div class="service__item anniversary"><span class="services__name">Юбилей</span></div>
+                <div class="service__item birthday"><span class="services__name">День<br>Рождения</span></div>
+            </div>
+        </section>
+        <section class="masters">
+            <h2 class="section__title">Наши мастера</h2>
+            <div class="masters__inner">
+                <div class="masters__image"><img src="sourse/мастера.jpg" alt="masters"></div>
+                <p class="masters__descriptions">Наши флористы - это настоящие мастера своего дела. Они знают все
+                    тонкости и
+                    секреты создания идеального букета. Мы работаем с различными видами цветов, от классических роз до
+                    экзотических орхидей.</p>
+            </div>
+        </section>
+        <section class="feedback">
+            <h2 class="section__title">Отзывы</h2>
+            <div class="feedback__inner">
+                <div class="feedback__item">
+                    <div class="feedback__image"><img src="sourse/девушкараз.jpg" alt="девушка"></div>
+                    <div class="feedback__content">
+                        <h3>Владислава Денисламовна</h3>
+                        <p>Я хотела бы выразить свою благодарность за прекрасную работу мастерской по собиранию букетов
+                            и их
+                            доставке. Я заказывала букет для своей подруги на день рождения, и он был просто
+                            потрясающим!
+                            Цветы были свежими и красивыми,
+                            а сама композиция была очень оригинальной и стильной.</p>
+                        <p>Доставка также была на высшем уровне - букет был доставлен вовремя и в отличном состоянии. Я
+                            очень довольна работой мастерской и обязательно буду обращаться
+                            к ним еще раз!
+                            Спасибо за вашу работу!</p>
+                    </div>
+                </div>
+                <div class="feedback__item">
+                    <div class="feedback__image"><img src="sourse/девушкадва.jpg" alt="девушка2"></div>
+                    <div class="feedback__content">
+                        <h3>Софья Яновна</h3>
+                        <p>Я хотела бы выразить свою благодарность за прекрасную работу
+                            по украшению зала к празднику и созданию букета. Все было выполнено на высшем уровне, с
+                            большим вниманием к деталям. Букет был просто великолепным - цветы были свежими и красиво
+                            подобраны, а оформление было очень стильным и элегантным. </p>
+                        <p>Зал также выглядел потрясающе - декораторы проявили настоящий талант
+                            и профессионализм, создав атмосферу праздника и уюта. Я очень довольна результатом и
+                            рекомендую эту команду для всех, кто ищет качественное и красивое оформление для своего
+                            мероприятия."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="delivery">
+            <div class="delivery__inner">
+                <h2 class="section__title">Доставка и оплата</h2>
+                <div class="delivery__content">
+                    <p class="delivery__text">Доставка будет осуществлять при заказе от 1500 рублей.<br>В любой район
+                        города и по окрестностям.<br><br>Заказ можно выбрать в каталоге, либо собрать свой букет. Оплата
+                        осуществляется онлайн после<br>оформления заказа, либо наличными при получении.</p>
+                    <div class="delivery__image"><img src="sourse/delivery.jpg" alt="car"></div>
+                </div>
+            </div>
+        </section>
+        <div class="order">
+            <form action="composition.html" target="composition">
+                <button class="order__btn">Заказать букет</button>
+                <button class="order__btn">Заказать шары</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <nav class="navigation is-footer">
+            <u><a class="navigation__logo" href="index.html">Цветочный рай</a></u>
+            <ul class="navigation__menu">
+                <li class="navigation__item"><u><a href="#">Услуги</a></u></li>
+                <li class="navigation__item"><u><a href="composition.html">Композиции</a></u></li>
+                <li class="navigation__item"><u><a href="#">Шары</a></u></li>
+                <li class="navigation__item"><u><a href="about.html">О нас</a></u></li>
+                <li class="navigation__item"><u><a href="#">Корзина</a></u></li>
+            </ul>
+        </nav>
+        <div class="footer__inner">
+            <div class="footer__content" >
+                <div class="contacts">
+                    <div class="contacts__item">
+                        <div class="contacts__icon mail"></div>
+                        <div class="contacts__text">
+                            <a href="#">kamilla.idrisova4@mail.ru</a>
+                        </div>
+                    </div>
+                    <div class="contacts__item">
+                        <div class="contacts__icon phone"></div>
+                        <div class="contacts__text">
+                            <a href="#">8-800-535-35-35</a>
+                        </div>
+                    </div>
+                    <div class="contacts__item">
+                        <div class="contacts__icon geo"></div>
+                        <div class="contacts__text">
+                            <span>г. Уфа ул. Школьная 20/1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__logo" style="margin-top: -40px"><img src="sourse/footer-logo.svg" alt="footer-logo"></div>
+            </div>
+        </div>
+        <span class="copyright"> © Design by Idrisova Kamilla</span>
+    </footer>     
+</body>
+</html>
