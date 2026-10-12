@@ -179,7 +179,7 @@ h2, h3 {
 
 .header__decription {
     margin: 22px 0 0;
-    color: var(--lux-gold);
+    color: var(--lux-white);
     font-size: clamp(16px, 2vw, 21px);
     letter-spacing: 0.04em;
 }
