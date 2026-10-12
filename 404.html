@@ -1,1 +1,65 @@
 <!doctype html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="styles/my.css"><title>Страница не найдена — Цветочный рай</title></head><body><main class="main"><section class="cart-empty"><div style="font-size:64px">✿</div><h1 style="font-family:'Playfair Display',serif;font-size:52px;margin:0">404</h1><h2 style="font-family:'Playfair Display',serif">Такой страницы нет</h2><p>Возможно, ссылка устарела или страница была перемещена.</p><a class="order__btn" href="index.html">Вернуться на главную</a></section></main></body></html>
+
+body {
+    background: #fbf7f0;
+    color: #352a2b;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 24px;
+}
+
+#message {
+    background: #fffdf9;
+    max-width: 520px;
+    margin: 80px auto;
+    padding: 38px 30px;
+    border: 1px solid #e8dccb;
+    border-top: 5px solid #c5a15b;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(53, 16, 27, 0.10);
+}
+
+#message h1,
+#message h2 {
+    color: #501625;
+}
+
+#message h1 {
+    font-size: 30px;
+}
+
+#message h2 {
+    font-size: 17px;
+}
+
+#message p {
+    line-height: 1.7;
+}
+
+#message a {
+    display: block;
+    margin-top: 24px;
+    padding: 14px;
+    background: #501625;
+    color: #fffdf9;
+    border: 1px solid #c5a15b;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#message a:hover {
+    background: #c5a15b;
+    color: #35101b;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    #message {
+        margin: 35px auto;
+        padding: 26px 20px;
+    }
+}
