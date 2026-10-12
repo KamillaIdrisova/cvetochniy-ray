@@ -70,6 +70,7 @@ body {
 
 img {
     max-width: 100%;
+    opacity: 0.5;
 }
 
 h1, h2, h3, h4,
