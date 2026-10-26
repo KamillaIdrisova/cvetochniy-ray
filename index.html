@@ -360,6 +360,50 @@
     </div>
 </section>
 
-    </footer>     
+    </footer> 
+    
+<!-- Библиотека EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+
+<script>
+    emailjs.init({
+        publicKey: "G0rvzHqtpvb1L8NYS"
+    });
+
+    const contactForm = document.getElementById("contact-form");
+    const contactStatus = document.getElementById("contact-status");
+    const contactSubmit = document.getElementById("contact-submit");
+
+    contactForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        contactSubmit.disabled = true;
+        contactSubmit.textContent = "Отправка...";
+        contactStatus.textContent = "";
+
+        emailjs.sendForm(
+            "service_cvetochniy",
+            "template_npb3igl",
+            contactForm
+        ).then(function () {
+            contactStatus.textContent =
+                "Спасибо! Ваша заявка отправлена. Мы скоро свяжемся с вами.";
+
+            contactStatus.style.color = "#28633b";
+            contactForm.reset();
+        }).catch(function (error) {
+            console.error("Ошибка EmailJS:", error);
+
+            contactStatus.textContent =
+                "Не удалось отправить заявку. Попробуйте ещё раз.";
+
+            contactStatus.style.color = "#a12626";
+        }).finally(function () {
+            contactSubmit.disabled = false;
+            contactSubmit.textContent = "Отправить заявку";
+        });
+    });
+</script>
+
 </body>
 </html>
