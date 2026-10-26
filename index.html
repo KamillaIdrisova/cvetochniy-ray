@@ -327,7 +327,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
     <script>
         emailjs.init({
-            publicKey: "ВСТАВЬ_СВОЙ_PUBLIC_KEY"
+            publicKey: "G0rvzHqtpvb1L8NYS"
         });
 
         const contactForm = document.getElementById("contact-form");
@@ -343,8 +343,8 @@
                 contactStatus.textContent = "";
 
                 emailjs.sendForm(
-                    "ВСТАВЬ_СВОЙ_SERVICE_ID",
-                    "ВСТАВЬ_СВОЙ_TEMPLATE_ID",
+                    "service_cvetochniy",
+                    "template_npb3igl",
                     contactForm
                 ).then(function () {
                     contactStatus.textContent = "Спасибо! Ваша заявка отправлена. Мы скоро свяжемся с вами.";
