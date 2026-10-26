@@ -280,128 +280,86 @@
                 Оставьте свои контакты, и мы свяжемся с вами,
                 чтобы обсудить ваш заказ.
             </p>
-    
+
             <form id="contact-form">
                 <div class="contact-field">
                     <label for="user_name">Ваше имя</label>
-                    <input
-                        type="text"
-                        id="user_name"
-                        name="user_name"
-                        placeholder="Как к вам обращаться?"
-                        autocomplete="name"
-                        maxlength="100"
-                        required
-                    >
+                    <input type="text" id="user_name" name="user_name" placeholder="Как к вам обращаться?" autocomplete="name" maxlength="100" required>
                 </div>
-    
+
                 <div class="contact-field">
                     <label for="user_email">Email для связи</label>
-                    <input
-                        type="email"
-                        id="user_email"
-                        name="user_email"
-                        placeholder="example@mail.com"
-                        autocomplete="email"
-                        maxlength="150"
-                        required
-                    >
+                    <input type="email" id="user_email" name="user_email" placeholder="example@mail.com" autocomplete="email" maxlength="150" required>
                 </div>
-    
-                <button type="submit" id="contact-submit">
-                    Отправить заявку
-                </button>
-    
-                <p
-                    id="contact-status"
-                    class="contact-status"
-                    role="status"
-                    aria-live="polite"
-                ></p>
+
+                <button type="submit" id="contact-submit">Отправить заявку</button>
+                <p id="contact-status" class="contact-status" role="status" aria-live="polite"></p>
             </form>
         </div>
     </section>
+
     <footer class="footer">
-        <nav class="navigation is-footer">
-            <u><a class="navigation__logo" href="index.html">Цветочный рай</a></u>
+        <nav class="navigation">
+            <a href="index.html" class="navigation__logo">Цветочный рай</a>
             <ul class="navigation__menu">
-                <li class="navigation__item"><u><a href="#">Услуги</a></u></li>
-                <li class="navigation__item"><u><a href="composition.html">Композиции</a></u></li>
-                <li class="navigation__item"><u><a href="#">Шары</a></u></li>
-                <li class="navigation__item"><u><a href="about.html">О нас</a></u></li>
-                <li class="navigation__item"><u><a href="#">Корзина</a></u></li>
+                <li class="navigation__item"><a href="index.html">Главная</a></li>
+                <li class="navigation__item"><a href="catalog.html">Каталог</a></li>
+                <li class="navigation__item"><a href="masters.html">Мастера</a></li>
+                <li class="navigation__item"><a href="delivery.html">Доставка</a></li>
+                <li class="navigation__item"><a href="about.html">О нас</a></li>
             </ul>
         </nav>
         <div class="footer__inner">
-            <div class="footer__content" >
+            <div class="footer__content">
                 <div class="contacts">
-                    <div class="contacts__item">
-                        <div class="contacts__icon mail"></div>
-                        <div class="contacts__text">
-                            <a href="#">kamilla.idrisova4@mail.ru</a>
-                        </div>
-                    </div>
-                    <div class="contacts__item">
-                        <div class="contacts__icon phone"></div>
-                        <div class="contacts__text">
-                            <a href="#">8-800-535-35-35</a>
-                        </div>
-                    </div>
-                    <div class="contacts__item">
-                        <div class="contacts__icon geo"></div>
-                        <div class="contacts__text">
-                            <span>г. Уфа ул. Школьная 20/1</span>
-                        </div>
-                    </div>
+                    <div class="contacts__item"><span>Телефон:</span> <a href="tel:+70000000000">+7 (000) 000-00-00</a></div>
+                    <div class="contacts__item"><span>Email:</span> <a href="mailto:info@example.com">info@example.com</a></div>
                 </div>
-                <div class="footer__logo" style="margin-top: -40px"><img src="sourse/footer-logo.svg" alt="footer-logo"></div>
+                <div class="footer__logo">
+                    <img src="sourse/logo.png" alt="Логотип">
+                </div>
             </div>
+            <span class="copyright">© 2024 Цветочный рай. Все права защищены.</span>
         </div>
-        <span class="copyright"> © Design by Idrisova Kamilla</span>
+    </footer>
 
-    </footer> 
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
-
-<script>
-    emailjs.init({
-        publicKey: "G0rvzHqtpvb1L8NYS"
-    });
-
-    const contactForm = document.getElementById("contact-form");
-    const contactStatus = document.getElementById("contact-status");
-    const contactSubmit = document.getElementById("contact-submit");
-
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        contactSubmit.disabled = true;
-        contactSubmit.textContent = "Отправка...";
-        contactStatus.textContent = "";
-
-        emailjs.sendForm(
-            "service_cvetochniy",
-            "template_npb3igl",
-            contactForm
-        ).then(function () {
-            contactStatus.textContent =
-                "Спасибо! Ваша заявка отправлена. Мы скоро свяжемся с вами.";
-
-            contactStatus.style.color = "#28633b";
-            contactForm.reset();
-        }).catch(function (error) {
-            console.error("Ошибка EmailJS:", error);
-
-            contactStatus.textContent =
-                "Не удалось отправить заявку. Попробуйте ещё раз.";
-
-            contactStatus.style.color = "#a12626";
-        }).finally(function () {
-            contactSubmit.disabled = false;
-            contactSubmit.textContent = "Отправить заявку";
+    <!-- СКРИПТЫ -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+    <script>
+        emailjs.init({
+            publicKey: "ВСТАВЬ_СВОЙ_PUBLIC_KEY"
         });
-    });
-</script>
 
+        const contactForm = document.getElementById("contact-form");
+        const contactStatus = document.getElementById("contact-status");
+        const contactSubmit = document.getElementById("contact-submit");
+
+        if (contactForm) {
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                contactSubmit.disabled = true;
+                contactSubmit.textContent = "Отправка...";
+                contactStatus.textContent = "";
+
+                emailjs.sendForm(
+                    "ВСТАВЬ_СВОЙ_SERVICE_ID",
+                    "ВСТАВЬ_СВОЙ_TEMPLATE_ID",
+                    contactForm
+                ).then(function () {
+                    contactStatus.textContent = "Спасибо! Ваша заявка отправлена. Мы скоро свяжемся с вами.";
+                    contactStatus.style.color = "#28633b";
+                    contactForm.reset();
+                }).catch(function (error) {
+                    console.error("Ошибка EmailJS:", error);
+                    contactStatus.textContent = "Не удалось отправить заявку. Попробуйте ещё раз.";
+                    contactStatus.style.color = "#a12626";
+                }).finally(function () {
+                    contactSubmit.disabled = false;
+                    contactSubmit.textContent = "Отправить заявку";
+                });
+            });
+        }
+    </script>
 </body>
 </html>
